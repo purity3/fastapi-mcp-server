@@ -1,7 +1,6 @@
 from fastapi import FastAPI, Request
 from mcp.server.fastmcp import FastMCP, Context
 from starlette.routing import Mount
-from mcp.server.sse import SseServerTransport as BaseSseServerTransport
 from transport.sse import FastAPISseServerTransport
 from dotenv import load_dotenv
 import os
