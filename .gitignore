@@ -1,0 +1,131 @@
+# Python相关
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.installed.cfg
+*.egg
+.eggs/
+
+# Python虚拟环境
+venv/
+env/
+ENV/
+.venv/
+pythonenv*/
+.env/
+
+# Python包和构建
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.spec
+pypackage/
+
+# Python测试和代码质量
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+nosetests.xml
+coverage.xml
+*.cover
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Jupyter相关
+.ipynb_checkpoints
+
+# 文档
+docs/_build/
+docs/api/
+
+# 环境变量和敏感信息
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+config/secrets.yaml
+config/credentials.json
+api_keys.json
+*_secrets.*
+
+# 地图和POI数据缓存
+map_cache/
+poi_data/
+*.geojson
+*.shp
+*.dbf
+*.shx
+*.prj
+temp_maps/
+cached_routes/
+
+# 数据文件
+*.csv
+*.xlsx
+*.xls
+*.json
+!package.json
+!tsconfig.json
+!requirements.json
+*.db
+*.sqlite
+*.sqlite3
+data/processed/
+data/raw/
+data/external/
+data/interim/
+
+# 临时查询缓存
+query_cache/
+search_history/
+reins_temp/
+station_data_cache/
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE和编辑器
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.code-workspace
+
+# 日志文件
+logs/
+*.log
+
+# 缓存目录
+.cache/
+.temp/
+__pycache__/
+
+# 临时文件
+*.tmp
+*~
+*.bak
+*.swp
+
+# 其他
+*.pem
+.vercel
