@@ -7,7 +7,7 @@ class JsonRpcMeta(BaseModel):
     JSON-RPC 请求的元数据
     """
     session_id: Optional[str] = None
-    path: Optional[str] = None
+    api_key: Optional[str] = None
 
 
 class JsonRpcParams(BaseModel):
