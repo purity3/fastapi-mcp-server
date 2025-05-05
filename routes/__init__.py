@@ -8,6 +8,8 @@ main_router = APIRouter()
 
 # 导入其他路由模块
 from routes.mcp import router as mcp_router
+from routes.session import router as session_router
 
 # 包含其他路由模块
 main_router.include_router(mcp_router)
+main_router.include_router(session_router)

@@ -7,8 +7,6 @@ from utils import mask_api_key
 def get_current_sessions(ctx: Context) -> str:
     """
     列出系统中所有活跃的会话
-    Args:
-        ctx: 上下文对象
     Returns:
         包含所有会话信息的字符串
     """
