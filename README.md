@@ -38,6 +38,7 @@ fastapi-mcp-server/
 
 - Python 3.13+
 - 支持异步的数据库(可选)
+- uv包管理器(推荐)
 
 ### 安装步骤
 
@@ -59,6 +60,16 @@ source .venv/bin/activate  # Linux/Mac
 
 3. 安装依赖：
 
+使用uv安装(推荐)：
+```bash
+# 如果尚未安装uv
+pip install uv
+
+# 使用uv安装依赖
+uv pip install -e .
+```
+
+或使用pip安装：
 ```bash
 pip install -e .
 ```
