@@ -88,6 +88,7 @@ data/processed/
 data/raw/
 data/external/
 data/interim/
+database/session.db
 
 # 临时查询缓存
 query_cache/
