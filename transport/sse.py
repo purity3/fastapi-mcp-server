@@ -120,18 +120,27 @@ class FastAPISseServerTransport(SseServerTransport):
             # 使用Pydantic模型解析
             request = JsonRpcRequest.model_validate(json_data)
             
-            # 检查是否为tools/call方法
-            if request.method == "tools/call" and request.params is not None:
-                print("检测到tools/call方法")
-                
+            # 检查是否为tools/call方法或其他需要会话信息的方法
+            if request.params is not None:
                 # 添加会话信息到meta (会自动通过alias转换为_meta)
                 meta = JsonRpcMeta(
                     session_id=session_id.hex,
                     path=path
                 )
-                request.params.meta = meta
+                # 保存原始meta中可能存在的其他字段
+                if hasattr(request.params, "meta") and request.params.meta:
+                    # 只更新session_id和path，保留其他字段
+                    if request.params.meta.session_id is None:
+                        request.params.meta.session_id = session_id.hex
+                    if request.params.meta.path is None:
+                        request.params.meta.path = path
+                else:
+                    # 如果meta不存在，设置新的meta
+                    request.params.meta = meta
                 
-                print(f"已添加session_id和path到meta: {meta.model_dump()}")
+                if request.method == "tools/call":
+                    print("检测到tools/call方法")
+                    print(f"已添加session_id和path到meta: {request.params.meta.model_dump()}")
             
             # 转换回JSONRPCMessage格式 (使用by_alias=True确保meta字段输出为_meta)
             modified_body = request.model_dump_json(by_alias=True).encode()
