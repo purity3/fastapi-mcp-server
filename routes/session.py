@@ -13,7 +13,7 @@ async def root(request: Request):
     app = request.app
 
     # 获取服务状态
-    status = "正常" if "session_service" in services else "未启动"
+    status = "normal" if "session_service" in services else "not started"
     
     return {
         "title": app.title,
